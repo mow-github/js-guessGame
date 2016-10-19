@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <title>Guess the number game</title>
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" async></script>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-center">Guess the number game</h1>
+
+    <!-- init "page / form" (enter username and guess interval + start game) -->
+    <form action="#" method="post">
+      <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label for="username">Username</label>
+        <input type="text" class="form-control inputField" id="username" placeholder="Username" value="foo" title="Can't be empty or contain numbers" pattern="[A-Za-z]{3,}" required>
+        <div class="alert alert-danger">3 or more characters</div>
+      </div>
+      <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <label for="intervalMin">Guess min number</label>
+        <input type="text" class="form-control inputField" id="intervalMin" placeholder="Interval" value="1" title="Can't be empty or contain strings" pattern="[0-9]{1,}" required>
+        <div class="alert alert-danger">1 or more numbers</div>
+      </div>
+      <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <label for="intervalMax">Guess max number</label>
+        <input type="number" class="form-control inputField" id="intervalMax" placeholder="Interval" value="5" title="Can't be empty or contain strings" pattern="[0-9]{1,}" required>
+        <div class="alert alert-danger">1 or more numbers</div>
+      </div>
+      <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <input type="submit" class="form-control submitBtn" value="Start">
+      </div>
+    </form>
+
+    <!-- second page/form (guess number + visual data) -->
+    <form action="#" method="post" id="formGuess">
+      <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label for="userNumber">Guess</label>
+        <input type="number" class="form-control inputField" id="userNumber" placeholder="Guess" title="numbers please" pattern="[0-9]{1,}" required>
+        <div class="alert alert-danger">1 or more numbers</div>
+      </div>
+      <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <input type="submit" class="form-control resetBtn" value="Back to the game menu">
+      </div>
+      <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <input type="submit" class="form-control submitBtn" value="Guess">
+      </div>
+
+      <div class="responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Game nr</th>
+            <th>x guesses</th>
+            <th>x guesses(low)</th>
+            <th>x guesses(high)</th>
+            <th>time done</th>
+          </tr>
+          </thead>
+          <tbody id="dataContainer">
+          <!-- dyn js data -->
+          </tbody>
+        </table>
+      </div>
+
+    </form>
+
+  </div>
+</body>
+</html>
+

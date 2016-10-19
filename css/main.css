@@ -1,0 +1,27 @@
+
+body{
+  /*import google font + inc the fontsize */
+  font-family: 'Abhaya Libre', serif;
+  font-size: 3em;
+}
+label{ cursor: pointer; }
+label:hover + input{ background-color: lightgreen; }
+.form-control{
+  /* override the bootstrap css data and inherit the font-size from the body */
+  height: 4em;
+  font-size: inherit;
+}
+input ~ div{ /* hide all divs after the current input */display: none; }
+input[type="submit"]:not(.resetBtn):hover{
+  /* target submit input, except with the class .resetBtn */
+  background-color: green;
+  color:white;
+}
+.resetBtn:hover{
+  background-color: red;
+  color:white;
+}
+#formGuess{
+  /*second page/form*/
+  display: none;
+}
