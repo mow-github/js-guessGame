@@ -46,9 +46,13 @@ window.onload = function(){
   function validateInputData(){
     let flag = true;
 
+    /* reset if one reenters "page2" */
+    gameNr = 0;
+    formObj.totalPoints = 0;
+
     /*hide all error-divs*/
     for(let i = 0; i < formDivs.length; i++){ formDivs[i].style.display = "none"; }
-    let formInputs = document.forms[0].getElementsByClassName("inputField");
+    let formInputs = form.getElementsByClassName("inputField");
 
     /*check every input value with a regexp and add data to an object*/
     for(let i = 0; i < formInputs.length; i++){
@@ -120,6 +124,8 @@ window.onload = function(){
     event.preventDefault();
     toggleView("block","none");
     clearOutputDataOnPage();
+    /*if one leaves "page2*".. clear the parent object*/
+    formObj = {};
   }
 
   /*inc totalPoints by 1*/
